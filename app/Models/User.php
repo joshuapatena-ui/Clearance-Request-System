@@ -47,4 +47,9 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function clearanceRequests()
+    {
+        return $this->hasMany(ClearanceRequest::class);
+    }
 }
