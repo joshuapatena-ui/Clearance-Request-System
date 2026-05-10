@@ -8,4 +8,8 @@ class Department extends Model
 {
     protected $fillable = ['name', 'slug'];
 
+    public function clearanceRequests()
+    {
+        return $this->hasMany(ClearanceRequest::class);
+    }
 }
