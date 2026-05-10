@@ -19,6 +19,8 @@ Route::middleware(['auth', 'admin'])->group(function () {
     })->name('admin.dashboard');
     
     Route::resource('admin/departments', \App\Http\Controllers\Admin\DepartmentController::class);
+    Route::get('admin/requests', [\App\Http\Controllers\Admin\ClearanceRequestController::class, 'index'])->name('admin.requests.index');
+    Route::patch('admin/requests/{id}', [\App\Http\Controllers\Admin\ClearanceRequestController::class, 'update'])->name('admin.requests.update');
 });
 
 Route::middleware('auth')->group(function () {
