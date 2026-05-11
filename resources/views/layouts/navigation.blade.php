@@ -19,6 +19,9 @@
                         <x-nav-link :href="route('departments.index')" :active="request()->routeIs('departments.index')">
                             {{ __('Departments') }}
                         </x-nav-link>
+                        <x-nav-link :href="route('admin.requests.index')" :active="request()->routeIs('admin.requests.index')">
+                            {{ __('Clearance Requests') }}
+                        </x-nav-link>
                     @else
                         <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                             {{ __('Student Dashboard') }}
@@ -83,7 +86,10 @@
                 <x-responsive-nav-link :href="route('departments.index')" :active="request()->routeIs('departments.index')">
                     {{ __('Departments') }}
                 </x-responsive-nav-link>
-            @else
+                <x-responsive-nav-link :href="route('admin.requests.index')" :active="request()->routeIs('admin.requests.index')">
+                    {{ __('Clearance Requests') }}
+                </x-responsive-nav-link>
+@else
                 <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                     {{ __('Student Dashboard') }}
                 </x-responsive-nav-link>
